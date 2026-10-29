@@ -1,0 +1,49 @@
+name: arc_raiders_guide_task2
+description: "A new Flutter project."
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.10.1
+
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+  flutter_riverpod: 3.0.3
+  riverpod_annotation: 3.0.3
+  http: ^1.6.0
+  flutter_launcher_icons: ^0.14.4
+  google_fonts: ^8.2.1
+
+dev_dependencies:
+  flutter_lints: ^6.0.0
+  riverpod_generator: 3.0.3
+  build_runner: ^2.15.1
+  flutter_test:
+    sdk: flutter
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/arc_raiders_logo.jpg"
+
+
+  
+
+
+
+# The following section is specific to Flutter packages.
+flutter:
+
+
+  uses-material-design: true
+
+  # To add assets to your application, add an assets section, like this:
+ 
+ 
