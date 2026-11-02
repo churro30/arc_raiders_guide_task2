@@ -13,12 +13,12 @@ class ItemNotifier extends _$ItemNotifier {
   int page = 1;
 
   List<Pagination> pages = [];
-
+//claude: is this written right ?
   Future<void> loadData() async {
     if (state.isLoading || !state.hasMoreData) return;
 
     state = state.copyWith(isLoading: true);
-
+//mdmd: exeption is not handeled. what if there were no internet ?.
     try {
       final data = await fetchData(page);
 

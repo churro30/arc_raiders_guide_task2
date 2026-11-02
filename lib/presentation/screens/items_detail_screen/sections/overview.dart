@@ -8,7 +8,7 @@ class Overview extends StatelessWidget {
   const Overview({super.key, required this.item});
 
   final Item item;
-
+//mdmd: this is a duplication of the quickstats widget. you could've reused it with passing some extra parameters
   @override
   Widget build(BuildContext context) {
     final rarityColor = rarityColors[item.rarity.trim().toLowerCase()];
