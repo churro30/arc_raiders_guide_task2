@@ -13,7 +13,6 @@ class ItemNotifier extends _$ItemNotifier {
   int page = 1;
 
   List<Pagination> pages = [];
-//claude: is this written right ?
   Future<void> loadData() async {
     if (state.isLoading || !state.hasMoreData) return;
 

@@ -95,7 +95,6 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
       ),
     );
   }
-//claude: is this ok ?
   void _scrollController() async {
     if (scrollController.position.extentAfter < 200) {
       await ref.read(itemProvider.notifier).loadData();
