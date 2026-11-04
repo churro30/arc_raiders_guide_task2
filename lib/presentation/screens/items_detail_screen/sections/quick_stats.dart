@@ -11,7 +11,9 @@ class QuickStats extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     final rarityColor = rarityColors[item.rarity.trim().toLowerCase()];
+    //mdmd: why the trim ?
     final value = item.value.trim();
     final weight = item.weight.trim();
     final hasQuickStats = value.isNotEmpty || weight.isNotEmpty;
@@ -22,6 +24,7 @@ class QuickStats extends StatelessWidget {
           ? [
               Text(
                 'Quick Stats',
+                //mdmd: google fonts ??? i am disappointed.
                 style: GoogleFonts.barlow(
                   color: rarityColor ?? Colors.grey,
                   fontSize: 30,

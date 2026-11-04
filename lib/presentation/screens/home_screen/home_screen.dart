@@ -22,6 +22,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
   void initState() {
     super.initState();
     scrollController.addListener(_scrollController);
+    //mdmd: what does this do ? why not just the ref.read
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (mounted) {
         ref.read(itemProvider.notifier).loadData();
@@ -29,7 +30,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     });
   }
 
-  @override
+  @override //mdmd: what does the dispose do ? what happens if we don't use it ?
   void dispose() {
     scrollController.dispose();
     super.dispose();
@@ -51,6 +52,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
             StripeColor(color: AppColors.primaryCyan),
           ],
         ),
+        //mdmd: why is this a row ? why not a single text widget ?
         title: Row(
           children: [
             Text('Arc Raiders', style: Theme.of(context).textTheme.titleMedium),
@@ -60,6 +62,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
       ),
       body: Center(
         child: ListView.builder(
+          //mdmd: what does this +1 do ?
           itemCount: items.length + 1,
           controller: scrollController,
           itemBuilder: (BuildContext context, index) {
@@ -72,8 +75,10 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                           builder: (context) => ItemDetails(item: items[index]),
                         ),
                       ),
+                      //mdmd: think about this. wouldn't be better that the [ListItem] widget be the clickable widget ? so you don't have to write the gesture detector each time ?
                       child: ListItem(item: items[index]),
                     )
+                    //mdmd: this shorthand if can't be reached at any conditions. how can index be less than items length. yet the items list be empty ??
                   : Center(child: Text('No Data Loaded'));
             } else {
               return Padding(
@@ -90,7 +95,6 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
       ),
     );
   }
-
   void _scrollController() async {
     if (scrollController.position.extentAfter < 200) {
       await ref.read(itemProvider.notifier).loadData();

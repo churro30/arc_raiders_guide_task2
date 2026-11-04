@@ -13,6 +13,7 @@ class ListItem extends StatelessWidget {
     final rarityColor = rarityColors[item.rarity.trim().toLowerCase()];
 
     return Container(
+      //mdmd: what is the difference between margin and padding ?
       margin: EdgeInsets.all(10),
       padding: EdgeInsets.only(left: 10),
       height: 110,
@@ -85,7 +86,6 @@ class _CornerTriangleClipper extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {
     const radius = 10.0;
-
     return Path()
       ..moveTo(size.width, 0)
       ..lineTo(size.width, size.height - radius)

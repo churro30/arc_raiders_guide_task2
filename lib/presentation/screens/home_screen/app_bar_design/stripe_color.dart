@@ -11,6 +11,7 @@ class StripeColor extends StatelessWidget {
       width: 8,
       margin: EdgeInsets.only(left: 5),
       color: color,
+      //mdmd: why is this an empty text ? a sized box is the proper way to leave an empty child
       child: Text(''),
     );
   }
